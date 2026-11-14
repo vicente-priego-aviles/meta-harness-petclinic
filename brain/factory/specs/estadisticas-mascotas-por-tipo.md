@@ -3,7 +3,7 @@ type: Spec
 title: Estadísticas de mascotas por tipo
 description: Cualquier visitante de PetClinic podrá abrir «Estadísticas» desde el menú y ver cuántas mascotas hay de cada tipo, en gráfico y en tabla, con totales y porcentajes.
 tags: [spec, owner]
-estado: aprobada
+estado: implementada
 tarea: 6
 rama: feat/6-estadisticas-mascotas-por-tipo
 riesgo: 1

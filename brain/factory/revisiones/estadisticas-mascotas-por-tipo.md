@@ -3,8 +3,10 @@ type: Revisión
 title: Revisión — estadisticas-mascotas-por-tipo
 rama: feat/6-estadisticas-mascotas-por-tipo
 resultado: aprobada
-rondas: 1
+rondas: 2
 ---
+
+Ronda 2 (revisión de cierre, mismo revisor): H1-H8 y H10 resueltos de verdad y sin hallazgos nuevos. Una observación informativa (H11) sin acción.
 
 Riesgo 1, un revisor (`revisor-java-spring`). El código de producción no tuvo hallazgos bloqueantes. Los hallazgos del revisor los comprobé yo mismo contra el código, sin pasar por `verificador-hallazgos`; queda anotado porque el procedimiento lo pide.
 
@@ -20,3 +22,4 @@ Riesgo 1, un revisor (`revisor-java-spring`). El código de producción no tuvo 
 | H8 | java-spring | División entera: una cuenta pequeña frente al máximo daba barra de ancho 0, igual que un tipo con 0 | baja | CONFIRMADO | arreglado: el ancho se calcula en el controlador con mínimo 1 si hay mascotas; test añadido |
 | H9 | java-spring | Etiqueta de 90 unidades sin recorte: un nombre largo o una cifra enorme se solapa o sale del `viewBox` | baja | CONFIRMADO | aparcado: con los tipos actuales no ocurre; si se añaden nombres largos habrá que ampliar el `viewBox` |
 | H10 | java-spring | `role="img"` sin `aria-labelledby` | baja (informativo) | CONFIRMADO | arreglado: `aria-labelledby` apunta al `<title>` |
+| H11 | java-spring (ronda 2) | `StatisticsControllerTests`: la regex del `<title>` también aceptaría una clave i18n ausente (`??statistics.chartTitle_en??`) | baja | CONFIRMADO | intencionado: borrar la clave a la vez de todos los `messages*.properties` es muy improbable y no compensa un test más frágil |
