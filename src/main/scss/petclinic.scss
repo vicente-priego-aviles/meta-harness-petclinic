@@ -215,6 +215,36 @@ hr {
   border-top: 1px dotted $spring-brown;
 }
 
+.stats-chart {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.stats-label,
+.stats-value {
+  font-size: 13px;
+  fill: $spring-brown;
+}
+
+.stats-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+}
+
+$stats-colors: #6db33f, #34302d, #3a7ca5, #d9822b, #8e5ea2, #c0392b, #16a085, #7f8c8d;
+
+@for $i from 0 through 7 {
+  .stats-bar-#{$i} {
+    fill: nth($stats-colors, $i + 1);
+    background-color: nth($stats-colors, $i + 1);
+  }
+}
+
 @import "typography.scss";
 @import "header.scss";
 @import "responsive.scss";
