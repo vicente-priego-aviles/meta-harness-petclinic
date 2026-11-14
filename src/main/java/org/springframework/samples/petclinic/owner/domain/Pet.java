@@ -18,7 +18,9 @@ package org.springframework.samples.petclinic.owner.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -88,6 +90,16 @@ public class Pet implements Serializable {
 
 	public Collection<Visit> getVisits() {
 		return this.visits;
+	}
+
+	/**
+	 * Visits sorted by date, most recent first. Derived view; not persisted.
+	 */
+	public List<Visit> getVisitsNewestFirst() {
+		return this.visits.stream()
+			.sorted(Comparator.comparing(Visit::getDate, Comparator.nullsFirst(Comparator.<LocalDate>naturalOrder()))
+				.reversed())
+			.toList();
 	}
 
 	public void addVisit(Visit visit) {

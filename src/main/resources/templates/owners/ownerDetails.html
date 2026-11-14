@@ -57,22 +57,19 @@
         </dl>
       </td>
       <td valign="top">
-        <table class="table-condensed">
-          <thead>
-            <tr>
-              <th th:text="#{visitDate}">Visit Date</th>
-              <th th:text="#{description}">Description</th>
-            </tr>
-          </thead>
-          <tr th:each="visit : ${pet.visits}">
-            <td th:text="${#temporals.format(visit.date, 'yyyy-MM-dd')}"></td>
-            <td th:text="${visit?.description}"></td>
-          </tr>
-          <tr>
-            <td><a th:href="@{__${owner.id}__/pets/__${pet.id}__/edit}" th:text="#{editPet}">Edit Pet</a></td>
-            <td><a th:href="@{__${owner.id}__/pets/__${pet.id}__/visits/new}" th:text="#{addVisit}">Add Visit</a></td>
-          </tr>
-        </table>
+        <ul class="visit-timeline" th:if="${!pet.visits.isEmpty()}">
+          <li th:each="visit : ${pet.visitsNewestFirst}"
+            th:classappend="${visit.date != null and visit.date.isAfter(#temporals.createToday())} ? 'visit-upcoming'">
+            <span class="visit-date" th:text="${#temporals.format(visit.date, 'yyyy-MM-dd')}"></span>
+            <span class="visit-badge" th:if="${visit.date != null and visit.date.isAfter(#temporals.createToday())}"
+              th:text="#{upcomingVisit}">Upcoming</span>
+            <div th:text="${visit?.description}"></div>
+          </li>
+        </ul>
+        <p class="no-visits" th:if="${pet.visits.isEmpty()}" th:text="#{noVisits}">No visits yet</p>
+        <a th:href="@{__${owner.id}__/pets/__${pet.id}__/edit}" th:text="#{editPet}">Edit Pet</a>
+        |
+        <a th:href="@{__${owner.id}__/pets/__${pet.id}__/visits/new}" th:text="#{addVisit}">Add Visit</a>
       </td>
     </tr>
 
