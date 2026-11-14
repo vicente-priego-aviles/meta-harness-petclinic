@@ -36,4 +36,16 @@ public interface PetTypeRepository extends JpaRepository<PetType, Integer> {
 	@Query("SELECT ptype FROM PetType ptype ORDER BY ptype.name")
 	List<PetType> findPetTypes();
 
+	/**
+	 * Count the pets of every {@link PetType}, including types without pets.
+	 * @return one {@link PetTypeCount} per type, ordered by type name.
+	 */
+	@Query("""
+			SELECT new org.springframework.samples.petclinic.owner.domain.PetTypeCount(ptype.name, COUNT(pet))
+			FROM PetType ptype LEFT JOIN Pet pet ON pet.type = ptype
+			GROUP BY ptype.id, ptype.name
+			ORDER BY ptype.name
+			""")
+	List<PetTypeCount> countPetsByType();
+
 }
