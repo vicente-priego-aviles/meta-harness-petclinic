@@ -7,7 +7,7 @@ import { tmp } from "./comun.mjs";
 
 export const ICONOS = {
   carril: "🛣️", skill: "🧩", subagente: "🤖", regla: "📏", riesgo: "⚖️",
-  bloqueo: "🛡️", maven: "🔧", aviso: "⚠️", ok: "✅", fallo: "❌",
+  bloqueo: "🛡️", maven: "🔧", aviso: "⚠️", ok: "✅", fallo: "❌", permiso: "🔐",
 };
 
 /** Activo si MH_TRAZA=1, o si .mh.json dice traza: true (MH_TRAZA=0 lo apaga para una sesión). */
