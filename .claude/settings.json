@@ -128,7 +128,9 @@
     "allow": [
       "Bash(node .mh/scripts/mvnq.mjs *)",
       "Bash(node .mh/scripts/riesgo.mjs *)",
-      "Bash(python3 -I .claude/skills/brain/scripts/verificar_evidencias.py *)"
+      "Bash(python3 -I .claude/skills/brain/scripts/verificar_evidencias.py *)",
+      "Bash(node .mh/scripts/tarea.mjs *)",
+      "Bash(node .mh/scripts/traza.mjs *)"
     ]
   },
   "$schema": "https://json.schemastore.org/claude-code-settings.json"
