@@ -1,0 +1,206 @@
+{
+  "version": "0.1.0",
+  "perfil": "standard",
+  "brain": "brain",
+  "desactivados": [],
+  "protegidos": [],
+  "riesgo": {
+    "nivel0": [],
+    "nivel2": [
+      "**/package-info.java",
+      "src/main/java/org/springframework/samples/petclinic/owner/*.java",
+      "src/main/java/org/springframework/samples/petclinic/system/*.java",
+      "src/main/java/org/springframework/samples/petclinic/vet/*.java"
+    ],
+    "contenido2": [
+      "@ApplicationModule\\(",
+      "@NamedInterface"
+    ]
+  },
+  "git": {
+    "convencion": "conventional-gitmoji",
+    "formatoRama": "{tipo}/{issue}-{slug}",
+    "ramaBase": "main",
+    "ramasProtegidas": [
+      "main"
+    ]
+  },
+  "tareas": {
+    "gestor": "github",
+    "acceso": "cli",
+    "proyecto": null,
+    "repo": null,
+    "permisos": {
+      "comentar": true,
+      "estado": true,
+      "crear": true,
+      "cerrar": true
+    },
+    "estados": {
+      "enCurso": "En curso",
+      "revision": "En revisión",
+      "hecho": "Hecho"
+    }
+  },
+  "plan": {
+    "id": "b17d5001b846",
+    "aceptado": "2026-11-14T12:14:17.943Z",
+    "respuestas": {
+      "nivel": "tecnico",
+      "tipo": "monolito-modular",
+      "objetivo": "PetClinic Modulith trabajado como factoría de software para evaluar meta-harness-factory",
+      "alcance": "creciente",
+      "integracion": "ramas",
+      "convencion": "conventional-gitmoji",
+      "formatoRama": "{tipo}/{issue}-{slug}",
+      "idiomaCodigo": "en",
+      "idiomaBrain": "es",
+      "gestor": "github",
+      "acceso": "cli"
+    },
+    "modulos": [
+      "nucleo",
+      "java",
+      "ddd",
+      "git",
+      "tareas"
+    ],
+    "skills": [
+      "brain",
+      "ftd",
+      "asdd",
+      "interrogar",
+      "revision",
+      "obsidian-markdown",
+      "obsidian-bases",
+      "defuddle",
+      "excalidraw",
+      "java-spring-boot",
+      "secuencia",
+      "spring-modulith",
+      "git",
+      "release",
+      "tareas"
+    ],
+    "agentes": [
+      "especificador",
+      "desarrollador",
+      "revisor-correccion",
+      "revisor-tests",
+      "revisor-seguridad",
+      "verificador-hallazgos",
+      "explorador",
+      "ejecutor-tests",
+      "revisor-java-spring",
+      "reparador-compilacion",
+      "revisor-modulos"
+    ],
+    "reglas": [
+      "brain",
+      "java",
+      "migraciones",
+      "modulos"
+    ],
+    "vendor": [],
+    "vigilar": {
+      "camunda": {
+        "dependencias": [
+          "io.camunda",
+          "camunda-spring-boot"
+        ]
+      },
+      "vaadin": {
+        "dependencias": [
+          "com.vaadin"
+        ]
+      }
+    },
+    "archivosBuild": [
+      "build.gradle",
+      "pom.xml"
+    ]
+  },
+  "gestionados": {
+    ".mh/hooks/bash-previo.mjs": "205983e4bca4eb60e39da057e49d7050059dd4dd8d644e692c6aa49bfbda9262",
+    ".mh/hooks/compactar.mjs": "59e6bb29dbd1628ffdbef3e772484b85ae8a91d5a87a090886d2d311105716b3",
+    ".mh/hooks/editar-posterior.mjs": "60705b610cd202995b3b6cf3bf3fc892ba2f66d91e54367a8dad138d06611fc2",
+    ".mh/hooks/editar-previo.mjs": "8b9b49b9ab545f4ff0466aea9f204c98df88f8511ebd41ddb3064ea4f6e78ab8",
+    ".mh/hooks/lib/comun.mjs": "4e50b6b01f70dd4fb67a2797d4806cc1c2a0c18dad11dae0dec7233b3e344f10",
+    ".mh/hooks/lib/traza.mjs": "336fe561be264004abb4f8cbc62faed3e9045605da7c8f96cc0c3dc2b07704ac",
+    ".mh/hooks/lib/worklog.mjs": "5bb5307d8497877df5442e062a752b1054dea7ef71b2a35db573ecd837fd59c6",
+    ".mh/hooks/parar.mjs": "ece897a1f0cade8cbfbc72c28f20d3f98486034bc0de2fde9e0bd83b825272ba",
+    ".mh/hooks/sesion-fin.mjs": "f035417b7b749fc853c8763cb42188a6a7118bb3ef537de35918d97baf489670",
+    ".mh/hooks/sesion-inicio.mjs": "5d93d4368bf52db5ebb1d147fefa0e315d82eeed1b1532697cc417330adcf985",
+    ".mh/hooks/traza.mjs": "d5d164860e1e9d4fc987cf7b7fb399d33e4e5df1ad4ca917d12f0aed6ac6fc6a",
+    ".mh/scripts/mvnq.mjs": "f35e237a3c1943a335bb7898b26b05094fc88d6ebd18392b10f33af5a60c2bb4",
+    ".mh/scripts/riesgo.mjs": "c366b2cff8fb12d2790220c19e927de911b74e165c97348cb365f088fdf610e1",
+    ".mh/scripts/tarea.mjs": "9f5d041d49dd325715ad924f9aeec487d6fca4b3e3d4d9cbc9b9805ce1ae0a47",
+    ".mh/scripts/traza.mjs": "4572ee49d93e92a7e06e784fbe351916cfee022bcdc92e630a983b654f7a5a42",
+    ".mh/orientacion.md": "117283187db2d1b32cb1c3eb4412e65def476ee7a6a9195892fe43590fada2f4",
+    ".claude/skills/brain/SKILL.md": "aa86e8f35d2c98d9f5d73d3ac9de4e4cde0f1a132241f2cf008a26b283c9eeeb",
+    ".claude/skills/brain/references/formato-index-log.md": "644d6a3f951e0e6edc2370e0b85fa747005694a76981ba1557d57c06d986b8b9",
+    ".claude/skills/brain/references/plantilla-nota.md": "58db4f6f3cb8b666ba59d10207741d762ee164ad680c6f1cace506f8842d94a0",
+    ".claude/skills/brain/references/plantilla-raw.md": "885b9385355d509c30cc639639ce1eb58197eb6faa264c07e82c8c0cbae60e74",
+    ".claude/skills/brain/scripts/__pycache__/verificar_evidencias.cpython-314.pyc": "086166becfd1822067ac1535c17c22a1f792a51ff457d78471ab64e7d92258f0",
+    ".claude/skills/brain/scripts/verificar_evidencias.py": "c606b25ad3ec0a09ea47d5b9ef1b3ec467d666a5a675ead71e59edb9b54bcc5b",
+    ".claude/skills/ftd/SKILL.md": "c452dcb628d84529cce195692a211b182258dfb05d2c36068442e0aff14c0e00",
+    ".claude/skills/ftd/references/plantilla-ftd.md": "d09b562433518061cd660c59eab63fe6012e3858b708fa923ac1ee82ccdfea57",
+    ".claude/skills/asdd/SKILL.md": "c59f25770604e27dab15b8ca18ca343ad2537baadb364f60e6fb903c9f96a476",
+    ".claude/skills/asdd/references/cierre.md": "1c715d6bdeef8a2bf86d1af057e6054ea8f5652e259e135418779b9254d7afce",
+    ".claude/skills/asdd/references/constitucion.md": "00178789ad14ad06649358666c2bb5732dda3689907a7ead73506d56aca8685c",
+    ".claude/skills/asdd/references/implementar.md": "5e53567a4b2514ee20cf99a15b5dc58eca495a178aba8ad60e5ee12617d7a643",
+    ".claude/skills/asdd/references/plan.md": "45169a9af2936b10ac45e090edc5889223af7cd6dac04577699b417a02b642a9",
+    ".claude/skills/asdd/references/spec.md": "9f2a456b6300da1f2c7faf00512c6b1cd5dca3005638fc8b7d9f4b3af986ac23",
+    ".claude/skills/interrogar/SKILL.md": "7b587ca5cdb29a0bb11db7f224564f2f0c78a499567a8542014fdc92f1b57dbe",
+    ".claude/skills/revision/SKILL.md": "fb174b6a21ff51be86b771629f614fbe5f7cb55289431505fa3ed011c8179fe4",
+    ".claude/skills/obsidian-markdown/SKILL.md": "6e4ad158d92dc7a0bf0bb5fcf8f192cd90a92630abc5f42395eccb1a8d47d8e4",
+    ".claude/skills/obsidian-markdown/references/sintaxis.md": "ca5448448b537e071329523edc4b5da2ce998c1668b5114fa1e4c10ef666b3a7",
+    ".claude/skills/obsidian-bases/SKILL.md": "af6b673508263bd7c4f49430895ed967a1ff3f9ceebcde2bc802d445b485076c",
+    ".claude/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md": "208fd63aead9bca1975626fea52605e6ab9434dc0529d923feb36b18b8877d3b",
+    ".claude/skills/defuddle/SKILL.md": "a9ff380e4b676c74055b78612faa67580e05280ec9958c2ce0d2117ffacd97fd",
+    ".claude/skills/excalidraw/SKILL.md": "abc5855fb32312d2ca6a852c11e2db3e8db5d26b0f76c9d08e5e17c1fd0f0ba3",
+    ".claude/skills/excalidraw/plantillas/business-flow-swimlane-template.excalidraw": "30f4708c5e93a6602e8687b73c6f440fd6e8996189d87dc7530224786a3bfacb",
+    ".claude/skills/excalidraw/plantillas/class-diagram-template.excalidraw": "4d3f8984ddb57c27d5ffb7d68331a1ea59a4928c986a1b0e366586e9ed6198e4",
+    ".claude/skills/excalidraw/plantillas/data-flow-diagram-template.excalidraw": "da41355072ce76a594bd405696de7f6ba65da6b90cef4a6480addb3947e50533",
+    ".claude/skills/excalidraw/plantillas/er-diagram-template.excalidraw": "50313fac3520d3fe60387dc9386c5589e5fc46795d242efc3663cac336aab096",
+    ".claude/skills/excalidraw/plantillas/flowchart-template.excalidraw": "2d40fe507d44c45ba46a4d5be24ed5ceff380fb1651c86296ab2d1ff6c8c2eea",
+    ".claude/skills/excalidraw/plantillas/mindmap-template.excalidraw": "d619a1d95d1e6800f3464c39dc30b78585b690bbc5e844d33051a18d94484d45",
+    ".claude/skills/excalidraw/plantillas/relationship-template.excalidraw": "fb6414487e26d5c6af5f2e64c5d8084f08968a730ad0be828f189d1db41ca6ca",
+    ".claude/skills/excalidraw/plantillas/sequence-diagram-template.excalidraw": "1edf67683f35f4b7f2ac4c3e23d674ddb966fe1b9e53801dbf98f8a6b66394d9",
+    ".claude/skills/excalidraw/references/element-types.md": "57238dcce1ae42028705d6480819f1e2f40366a0aeccb567986088d51b16da04",
+    ".claude/skills/excalidraw/references/excalidraw-schema.md": "fd153de21f64eb2d0018461f8d674801b7ec54eb2bf8686bb1df4358e40b014a",
+    ".claude/skills/excalidraw/references/formato-spec.md": "e503568f43ed0936048158868b956cec3ad49d32a9add594652e4e4699dbc60c",
+    ".claude/skills/excalidraw/scripts/diagrama.py": "25c8a5991d0770b829c50d521eedfe3bd676c0e270c9d6ab141611164b29da18",
+    ".claude/skills/excalidraw/scripts/vista-previa.py": "d35ef7e62e31593be341a4c751b8bdb04fb32467b9b46098bc1b64a66d5dd2fb",
+    ".claude/skills/java-spring-boot/SKILL.md": "e57b475091e569ca665363ddcb080642aa6be08221f48349a78b27be70454acb",
+    ".claude/skills/java-spring-boot/references/migraciones.md": "dfed070b495713f3fb9fc2b75d031be1a0414fd0e2b4ec8f5b83bc0055294960",
+    ".claude/skills/java-spring-boot/references/tests.md": "a4fa3270d3ece8376fc128c79c0229bdeb9cd15f66f9adbd4ea03b9f2a73e064",
+    ".claude/skills/secuencia/SKILL.md": "977f395a830671fdaf990171fcb77b7978005d9f7e6913091c11d7c5458753d9",
+    ".claude/skills/spring-modulith/SKILL.md": "c1cdac3c62980b9858e0e3d12098a27fba7859cea8514f89f0a2c6222af9c6c2",
+    ".claude/skills/git/SKILL.md": "07126dcb56bd03dc4edcea4252e276ae61b13ddee1089fca9bea99940023c286",
+    ".claude/skills/git/references/commits.md": "5e29bda99b070a26a1c7ad609633f3751c047c6026ab4f0ebb286293394316b1",
+    ".claude/skills/git/references/gitmoji.md": "49e7371998bae6fb9570f072bc581bcf63a2d09597c0c203a835b62cbc4a2a1e",
+    ".claude/skills/git/references/pr.md": "c1dee1b859d01332a9175a6d41b52319568c760c38e18976f053fca5233c26a3",
+    ".claude/skills/release/SKILL.md": "13c48a48b7d1f0ee5ca14c99b21c54a3479143f2c1c3ade913ca2c819ff7ae8f",
+    ".claude/skills/tareas/SKILL.md": "214118e3194e5e51907c809b66856949456b67cfe68d1ab75eabf08b6370dc08",
+    ".claude/skills/tareas/references/github.md": "856900aded17897891d58a125f30386969c0f0081bffbb4387c80716ee50d22d",
+    ".claude/skills/tareas/references/gitlab.md": "01616f567f898667bc4edef826299226092bbac6ad3556c90e9519c451bdec9f",
+    ".claude/skills/tareas/references/jira.md": "c0e613268fa6c4f8c6a5c204eb3a8256e991da2040845f93fe515e83ef8abc63",
+    ".claude/agents/especificador.md": "0ea0606dd4b974d3d0e976a0fee9955091822f10369648620ab694de5a9a073d",
+    ".claude/agents/desarrollador.md": "a4bf93f8f78d5f4aa23490a40a463f75632ce55b242b8ccc27b1405c9d94e454",
+    ".claude/agents/revisor-correccion.md": "8f39a974b4a4668bb27ea20d40e592ba13c33483f94aca3d6852d3cff3e0f507",
+    ".claude/agents/revisor-tests.md": "a88cccb51cf2a5dbe010ec999a671915c0a65aefe72b7f0672ebcc48b31c3d12",
+    ".claude/agents/revisor-seguridad.md": "081454b06fa613aa3df18aa90db4065d944537959d5e8ea7facfa9a96a6fd2a7",
+    ".claude/agents/verificador-hallazgos.md": "c41b64fd0128cf2392da1cb51fce7fd98863ba256801d0e5e5083144a9334561",
+    ".claude/agents/explorador.md": "485c5ce2393df12ad45581abcc9ff4ed84c839d0c37a586edaf847290f024356",
+    ".claude/agents/ejecutor-tests.md": "06f4f4aff28df6e551c7dfb24e6969df93d758593852375fd34506948daafa67",
+    ".claude/agents/revisor-java-spring.md": "f5f3e4d3efd39540c0f2633bedcf94ecbcccf2bcd96c4400aad0a22fbb84bb5e",
+    ".claude/agents/reparador-compilacion.md": "b1b338883bcdee37a16a67f1136b6cc642d69c8c0a7e91519444ce1e4965f05a",
+    ".claude/agents/revisor-modulos.md": "f9b65a307e0b34be3ca804494744b3bb9933f5418aa2f5425757039fc047fc43",
+    ".claude/rules/brain.md": "63d73ec7e3993b8a019f4d735a38a7d07c2e1ad020ec6d32d49e10608e2b9661",
+    ".claude/rules/java.md": "5a6850f8caf6e75da821e5630a70e9328608d8c9a646fd470f344c885f0b92d9",
+    ".claude/rules/migraciones.md": "9868bc7f440cf78fcc79da0771d0e8f2f4d3b1a42dc78f7a04591a100aeb04c2",
+    ".claude/rules/modulos.md": "7e366050f68aeacb666a8af6f77cdf1e3612a46862f383826ff24d3259b4f494"
+  },
+  "traza": false
+}
