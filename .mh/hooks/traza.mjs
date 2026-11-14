@@ -4,6 +4,7 @@
 //   PreToolUse  Skill|Agent             → 🧩 skill / 🤖 subagente lanzado
 //   PostToolUse Agent|Write|Edit|…      → 🤖 subagente terminó / 🛣️ documento de carril (una vez por archivo y sesión)
 //   InstructionsLoaded path_glob_match  → 📏 regla con paths (a la cola: este evento descarta los avisos)
+//   PermissionRequest / PermissionDenied → 🔐 permiso pedido (en -p, sin respuesta, se deniega) / denegado en modo auto
 //   Stop                                → saca la cola
 import { basename, relative } from "node:path";
 import { conAviso, enAbierto, leerConfig, leerEntrada, primeraVez, raizProyecto, salirJson } from "./lib/comun.mjs";
@@ -29,6 +30,10 @@ export function lineas(entrada, raiz, config) {
     const carril = CARRILES.find(([re]) => re.test(`/${rel}`));
     if (carril && primeraVez(raiz, entrada.session_id, `traza-${rel.replace(/[^\w.-]/g, "_")}`)) return [t(ICONOS.carril, `${carril[1]}: ${rel}`)];
     return [];
+  }
+  if (ev === "PermissionRequest" || ev === "PermissionDenied") {
+    const que = `${entrada.tool_name || "?"}${ti.command ? ` ${ti.command}` : ti.file_path ? ` ${relative(raiz, ti.file_path)}` : ""}`;
+    return [t(ICONOS.permiso, ev === "PermissionRequest" ? `permiso pedido: ${que}` : `permiso denegado: ${que}${entrada.reason ? ` — ${entrada.reason}` : ""}`)];
   }
   if (ev === "InstructionsLoaded" && entrada.load_reason === "path_glob_match") {
     const por = entrada.trigger_file_path ? ` (al tocar ${basename(entrada.trigger_file_path)})` : "";

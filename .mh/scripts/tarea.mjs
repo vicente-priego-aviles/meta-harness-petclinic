@@ -188,6 +188,12 @@ export function ejecutar(argv, raiz = process.env.CLAUDE_PROJECT_DIR || process.
     [bin, a, entrada] = preparar();
     r = spawnSync(bin, a, { input: entrada, encoding: "utf8", cwd: raiz });
   }
+  // GitHub: las etiquetas de estado no existen hasta que alguien las crea; se crean las que falten y se repite
+  if (r.status !== 0 && bin === "gh" && accion === "estado" && /not found/i.test(r.stderr || "")) {
+    const repo = cfg.repo ? ["-R", cfg.repo] : [];
+    for (const e of Object.values(cfg.estados)) spawnSync("gh", ["label", "create", e, ...repo], { encoding: "utf8", cwd: raiz });
+    r = spawnSync(bin, a, { input: entrada, encoding: "utf8", cwd: raiz });
+  }
   if (r.error) return { codigo: 1, salida: `No se pudo ejecutar «${bin}»: ${r.error.code === "ENOENT" ? "no está instalado" : r.error.message}. Comprueba la instalación y la sesión (doctor).` };
   if (r.status !== 0) return { codigo: 1, salida: `«${bin} ${a.slice(0, 3).join(" ")}» falló: ${recortar(r.stderr || r.stdout, 600)}` };
   const salida = ["ver", "buscar"].includes(accion) ? resumir(cfg.gestor, accion, r.stdout, op.q) : (r.stdout.trim() || "Hecho.");
