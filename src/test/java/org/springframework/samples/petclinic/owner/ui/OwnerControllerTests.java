@@ -103,6 +103,51 @@ class OwnerControllerTests {
 	}
 
 	@Test
+	void testShowOwnerRendersVisitTimelineWithUpcomingMarker() throws Exception {
+		Pet max = this.owners.findById(TEST_OWNER_ID).get().getPet("Max");
+		Visit future = new Visit();
+		future.setDate(LocalDate.now().plusDays(10));
+		future.setDescription("future checkup");
+		max.getVisits().add(future);
+
+		mockMvc.perform(get("/owners/{ownerId}", TEST_OWNER_ID))
+			.andExpect(status().isOk())
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("visit-timeline")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("visit-upcoming")))
+			.andExpect(content().string(not(org.hamcrest.Matchers.containsString("no-visits"))));
+	}
+
+	@Test
+	void testShowOwnerPastVisitHasNoUpcomingMarker() throws Exception {
+		mockMvc.perform(get("/owners/{ownerId}", TEST_OWNER_ID))
+			.andExpect(status().isOk())
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("visit-timeline")))
+			.andExpect(content().string(not(org.hamcrest.Matchers.containsString("visit-upcoming"))));
+	}
+
+	@Test
+	void testShowOwnerWithUndatedVisitStillRenders() throws Exception {
+		Visit undated = new Visit();
+		undated.setDate(null);
+		undated.setDescription("undated");
+		this.owners.findById(TEST_OWNER_ID).get().getPet("Max").getVisits().add(undated);
+
+		mockMvc.perform(get("/owners/{ownerId}", TEST_OWNER_ID))
+			.andExpect(status().isOk())
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("undated")));
+	}
+
+	@Test
+	void testShowOwnerWithoutVisitsShowsNoVisitsText() throws Exception {
+		this.owners.findById(TEST_OWNER_ID).get().getPet("Max").getVisits().clear();
+
+		mockMvc.perform(get("/owners/{ownerId}", TEST_OWNER_ID))
+			.andExpect(status().isOk())
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("no-visits")))
+			.andExpect(content().string(not(org.hamcrest.Matchers.containsString("visit-timeline"))));
+	}
+
+	@Test
 	void testInitCreationForm() throws Exception {
 		mockMvc.perform(get("/owners/new"))
 			.andExpect(status().isOk())

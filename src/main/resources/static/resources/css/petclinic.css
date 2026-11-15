@@ -9533,4 +9533,13 @@ strong {
     margin-top: 10px;
     margin-bottom: 30px; } }
 
+/* Visit timeline (owner details) */
+.visit-timeline { list-style: none; margin: 0 0 10px 0; padding: 0 0 0 18px; border-left: 2px solid #6db33f; }
+.visit-timeline li { position: relative; margin-bottom: 8px; }
+.visit-timeline li::before { content: ""; position: absolute; left: -25px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: #6db33f; }
+.visit-timeline li.visit-upcoming::before { background: #fff; border: 2px solid #f0ad4e; width: 12px; height: 12px; left: -26px; top: 4px; }
+.visit-timeline .visit-date { font-weight: bold; margin-right: 6px; }
+.visit-timeline .visit-badge { background: #f0ad4e; color: #fff; border-radius: 3px; padding: 0 5px; font-size: 11px; margin-left: 6px; }
+.no-visits { font-style: italic; color: #777; }
+
 /*# sourceMappingURL=../../../../../../target/petclinic.css.map */
